@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AndreasHarfeldJakobsen201608930.WPF.DAL;
+using AndreasHarfeldJakobsen201608930.WPF.Views;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Prism.Commands;
 
 namespace AndreasHarfeldJakobsen201608930.WPF
 {

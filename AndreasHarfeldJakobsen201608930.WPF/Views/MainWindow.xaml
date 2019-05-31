@@ -1,0 +1,228 @@
+﻿<Window x:Class="AndreasHarfeldJakobsen201608930.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AndreasHarfeldJakobsen201608930.WPF"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:viewModels="clr-namespace:AndreasHarfeldJakobsen201608930.WPF.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="800">
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid Margin="5,5,5,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Content="Navn:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,0,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Label Content="Telefon:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Label Content="Adresse:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Label Content="Højde:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Label Content="Vægt:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Label Content="Hårfarve:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Label Content="Kommentar:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             TextWrapping="Wrap"
+                             Height="60"
+                             IsReadOnly="True"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <WrapPanel Orientation="Vertical"
+                       Margin="0,5,0,0">
+                <Button Command="{Binding Path=AddModelCommand}">
+                    <Grid>
+                        <Rectangle Height="11"
+                                   Width="33"
+                                   Fill="LimeGreen"
+                                   />
+                        <Rectangle Height="33"
+                                   Width="11"
+                                   Fill="LimeGreen"
+                                   />
+                    </Grid>
+                </Button>
+                <Button>
+                    <Grid>
+                        <Image Height="33" Source="../Images/delete2.png"/>
+                    </Grid>
+                </Button>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="2">
+            <DataGrid Margin="5,5,5,5"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding Path=ListofModels, IsAsync=True}">
+                
+            </DataGrid>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid Margin="5,5,5,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Content="Kunde:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,0,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Label Content="Startdato:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Label Content="Varighed:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Label Content="Location:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Label Content="Antal Modeller:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Label Content="Kommentar:"/>
+                    <TextBox HorizontalAlignment="Right"
+                             Margin="0,1,0,1"
+                             Width="275"
+                             Height="60"
+                             TextWrapping="Wrap"
+                             IsReadOnly="True"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <WrapPanel Orientation="Vertical"
+                       Margin="0,5,0,0">
+                <Button>
+                    <Grid>
+                        <Rectangle Height="11"
+                                   Width="33"
+                                   Fill="LimeGreen"
+                        />
+                        <Rectangle Height="33"
+                                   Width="11"
+                                   Fill="LimeGreen"
+                        />
+                    </Grid>
+                </Button>
+                <Button>
+                    <Grid>
+                        <Image Height="33" Source="../Images/delete2.png"/>
+                    </Grid>
+                </Button>
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="2">
+            <DataGrid Margin="5,5,5,5"
+                      ItemsSource="{Binding Path=ListofUnplannedAssignments, IsAsync=True}">
+
+            </DataGrid>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <WrapPanel HorizontalAlignment="Right"
+                       Orientation="Horizontal">
+                <Button Margin="5,5,5,5">
+                    Tilføj model til opgave
+                </Button>
+                <Button Margin="5,5,5,5">
+                    Fjern model fra opgave 
+                </Button>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="2">
+            <DataGrid Margin="5,5,5,5"
+                      ItemsSource="{Binding Path=ListofPlannedAssignments, IsAsync=True}">
+
+            </DataGrid>
+        </Grid>
+    </Grid>
+    
+</Window>
